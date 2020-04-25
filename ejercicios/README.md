@@ -7,9 +7,9 @@
 ## Ejercicios ##
 
 1. Consulte el uso de la función ```gettimeofday``` para medir el tiempo de ejecución de un programa
-   * ¿Cómo se utiliza esta función (muestre un ejemplo)? 
-   * ¿Cuál es el intervalo de tiempo más corto que se puede medir con esta función?
-2. Consulte cuantas CPUs hay disponibles en el sistema que usted está utilizando. (Pista use el comando lscpu)
+   * ¿Cómo se utiliza esta función (muestre un ejemplo)? R:/ Esta función se utiliza colocando un timer que comienza a contar a partir de cierta línea de código y finaliza luego de cierta línea de código (ver imágenes punto1_codigo.png y punto1_salida.png)
+   * ¿Cuál es el intervalo de tiempo más corto que se puede medir con esta función? R:/ El intervalo mínimo de tiempo que se puede medir con esta función es de 0 milisegundos al no colocar ninguna instrucción entre las líneas de comienzo y finalización del timer (ver imagen punto1-mintime.png)
+2. Consulte cuantas CPUs hay disponibles en el sistema que usted está utilizando. (Pista use el comando lscpu) R:/ Mi sistema tiene 2 procesadores físicos y 4 lógicos.
 2. Desarrolle un programa que utilice un contador concurrente simple. Mida cuánto tiempo lleva incrementar el contador muchas veces a medida que aumenta el número de hilos (1, 2, 4, 8 y 16). Para tal fin, siga las instrucciones que aparecen en el directorio [preciso](./preciso). Una vez complete los pasos continue con el tercer punto.
 3. Desarrolle una versión del contador aproximado (*sloppy counter*) y mida su desempeño a medida que se varía el número de hilos. En este caso, solo maneje un umbral de S = 1024 variando el número de hilos (1, 2, 4, 8 y 16). Las intrucciones para ello se encuentran en el directorio [aproximado](./aproximado).
 4. Grafique los resultados obtenidos de las pruebas recopiladas (en las tablas) para el **número de hilos .vs. el tiempo (en segundos)**, estas siguen la tendencia de la figura **29.5** del libro (la cual se muestra a continuación):
