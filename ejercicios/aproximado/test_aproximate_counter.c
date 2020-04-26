@@ -2,6 +2,7 @@
 #include <pthread.h>
 #include <stdlib.h>
 #include <sys/time.h>
+#include <unistd.h>
 #include "counter.h"
 
 #define THRESHOLD 1024
@@ -11,7 +12,7 @@
 
 /* start_routine header */
 // code here...
-void* sumar ();
+void* sumar (void* parametros);
 int valorMaximo =0;
 int numHilos = 0;
 
@@ -44,9 +45,10 @@ int main(int argc, char *argv[]) {
 
     int i;
     pthread_t threads_id[argc];
+    
 
     for(i=1; i<argc;i++){
-        pthread_create(&threads_id[i],NULL, &sumar, NULL);
+        pthread_create(&threads_id[i],NULL, &sumar,&i);
     }
 
     for(i=1; i<argc;i++){
@@ -67,7 +69,7 @@ int main(int argc, char *argv[]) {
 
     /* print the results (number threads employed, counter value, elasep time) */
     // code here...
-    printf("Se han empleado %d hilos para aumentar hasta %d el contador y tomó %g milisegundos para completarlo\n", numHilos, &contador->value, tiempo);
+    printf("Se han empleado %d hilos para aumentar hasta %d el contador y tomó %g milisegundos para completarlo\n", numHilos, get(&contador), tiempo);
     }
     return 0;
 }
@@ -75,10 +77,11 @@ int main(int argc, char *argv[]) {
 /* start_routine definition */
 // code here...
 
-void* sumar(){
+void* sumar(void* parametros){
+    int threadId = *((int*)parametros);
     int i;
     for(i=0; i<valorMaximo;i++){
-        
+        update(&contador, threadId,1);
     }
 }
 
