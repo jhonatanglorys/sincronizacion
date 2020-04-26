@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
 
     /* print the results (number threads employed, counter value, elasep time) */
     // code here...
-    printf("Se han empleado %d hilos para aumentar hasta %d el contador y tomó %g milisegundos para completarlo\n", numHilos, &contador->value, tiempo);
+    printf("Se han empleado %d hilos para aumentar hasta %d el contador y tomó %g milisegundos para completarlo\n", numHilos, get(&contador), tiempo);
 
     }
     return 0;
@@ -92,7 +92,7 @@ int main(int argc, char *argv[]) {
 
 void* sumar(){
     int i;
-    for(i=0; i<valorMaximo;i++){
+    for(i=0; i<(valorMaximo/2);i++){
         increment(&contador);
     }
 }
