@@ -16,9 +16,9 @@
 
 ![fig_performance](fig_performance.jpg)
 
-   * ¿Los valores que usted obtuvo siguen una tendencia como la que se muestra en el texto guía (mostrada anteriormente)?
-   * ¿Cuántas CPUs hay disponibles en el sistema que usted está utilizando?  
-   * ¿Este número afecta de alguna manera sus mediciones?
+   * ¿Los valores que usted obtuvo siguen una tendencia como la que se muestra en el texto guía (mostrada anteriormente)? R:/ Experimentalmente, los valores del contador preciso no siguen la tendencia mostrada en el texto guía,  ya que en mi caso se nota un decremento en el tiempo al aumentar el número de hilos de 1 a 2, pero al aumentar exponencialmente el número de hilos el tiempo vuelve a crecer pero sin mucha variación entre cada intervalo (ver imagen grafica-preciso.png en la carpeta preciso). Por el contrario el contador aproximado si muestra un comportamiento similar al mostrado en la guía en el sentido que su variación de tiempo total de ejecución no es mucha al aumentar el número de hilos (ver imagen grafica-aproximado.png en la carpeta aproximado); sin embargo, al comparar el preciso con el aproximado, no se evidencia una mejora considerable tal como el libro lo ilustra.
+   * ¿Cuántas CPUs hay disponibles en el sistema que usted está utilizando?  R:/ Hay 4 CPUS
+   * ¿Este número afecta de alguna manera sus mediciones? R:/ He notado que no lo afecta, teniendo en cuenta que para el contador aproximado no conseguí aumentar el contador hasta el número deseado (ver imagen aproximado.png en la carpeta aproximado), diferente a como si lo logré usando el contador preciso (ver imagen preciso.png en la carpeta preciso)
 
 5. Mejore el archivo [test_aproximate_mejorado_counter.c](./aproximado_mejorado/test_aproximate_mejorado_counter.c) (el cual se encuentra en el directorio [aproximado_mejorado](./aproximado_mejorado)) de tal modo que, además de permitir modificar el numero de hilos y el valor máximo del contador a emplear, permita modificar también el umbral o factor de apromación (S), para esto se puede basar en el ejercicio 3. De este modo los parametros serán:
    * Umbral: ```APPROXIMATION_FACTOR```
