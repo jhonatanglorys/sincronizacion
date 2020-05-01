@@ -16,7 +16,6 @@ void* sumar (void* parametros);
 int valorMaximo =0;
 int numHilos = 0;
 
-
 /* Global variables */
 // code here (if you required it)...
 counter_t *contador;
@@ -80,7 +79,7 @@ int main(int argc, char *argv[]) {
 void* sumar(void* parametros){
     int threadId = *((int*)parametros);
     int i;
-    for(i=0; i<valorMaximo;i++){
+    for(i=0; i<valorMaximo/2;i++){
         update(&contador, threadId,1);
     }
 }
