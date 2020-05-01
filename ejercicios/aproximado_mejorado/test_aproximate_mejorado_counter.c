@@ -81,7 +81,7 @@ int main(int argc, char *argv[]) {
 void* sumar(void* parametros){
     int threadId = *((int*)parametros);
     int i;
-    for(i=0; i<valorMaximo;i++){
+    for(i=0; i<(valorMaximo/3);i++){
         update(&contador, threadId,1);
     }
 }
