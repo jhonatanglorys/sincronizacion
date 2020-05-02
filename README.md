@@ -6,4 +6,4 @@ Este laboratorio esta compuesto de dos partes a realizar.
 
 Su tarea consistirá en realizar cada una de las partes anteriormente expuestas, llevando a cabo las instrucciones allí dadas.
 
-
+Las gráficas del punto 1 pueden ser encontradas acá https://docs.google.com/spreadsheets/d/1oPMn-iIsJQ9T7vlLX0XoPGHMGx7J2bcFkEIiNhffvnE/edit?usp=sharing
