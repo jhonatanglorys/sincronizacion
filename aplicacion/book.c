@@ -3,6 +3,10 @@
 #include <pthread.h>
 #include "book.h"
 
+void init(book *b){
+    b->status=1; // 1 igual disponible
+    return;
+}
 
 void setId(book *b, long num){
     b->id=num;
@@ -39,11 +43,7 @@ int getStatus(book *b){
 }
 void changeStatus(book *b){
     pthread_mutex_lock(&b->lock);
-    if(b->status==0){ // 0 igual a disponiblr
-        b->status=1;// 1 igual a prestado
-    } else {
-        b->status=0;
-    }
+    b->status=0;// 0 igual a prestado
     pthread_mutex_unlock(&b->lock);
     return;
 }

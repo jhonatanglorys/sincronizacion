@@ -12,7 +12,7 @@ typedef struct book{
     pthread_mutex_t lock;
 }book;
 
-
+void init(book *b);
 void setId(book *b, long num);
 long getId(book *b);
 void setName(book *b, char nam);
